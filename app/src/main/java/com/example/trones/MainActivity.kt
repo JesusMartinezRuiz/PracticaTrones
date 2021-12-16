@@ -9,6 +9,7 @@ import java.lang.RuntimeException
 
 lateinit var button1:Button
 lateinit var button2:Button
+lateinit var config:Button
 
 
 
@@ -19,6 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         button1=findViewById(R.id.main_btn_ej1)
         button2=findViewById(R.id.main_btn_ej2)
+        config=findViewById(R.id.main_btn_config)
+
+        config.setOnClickListener {
+            val actividad = Intent(applicationContext,CalculaConfig::class.java)
+            startActivity (actividad)
+        }
 
 
     }

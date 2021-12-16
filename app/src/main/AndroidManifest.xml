@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trones">
-        <activity android:name=".CalculaMain"></activity>
+        <activity android:name=".CalculaResultados"></activity>
+        <activity android:name=".CalculaConfig" />
+        <activity android:name=".CalculaMain" />
         <activity android:name=".MemoryMain" />
         <activity android:name=".MainActivity">
             <intent-filter>
