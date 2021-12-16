@@ -36,7 +36,7 @@ class CalculaConfig : AppCompatActivity() {
         num_max=findViewById(R.id.config_maximo)
         num_min=findViewById(R.id.config_minimo)
         spi_animacion=findViewById(R.id.spi_animacion)
-        val cbs = listOf(R.id.checksuma, R.id.checkresta, R.id.checkmul)
+        val listaSimbolos = listOf(R.id.checksuma, R.id.checkresta, R.id.checkmul)
 
 
         SP= getSharedPreferences(sp_timer_name, 0)

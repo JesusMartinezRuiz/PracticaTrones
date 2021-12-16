@@ -33,7 +33,7 @@ class CalculaMain : AppCompatActivity() {
 
     var resultado=0
     var contador:Long=0
-    var input:String=""
+    var cadenaTxt:String=""
     var aciertos= 0
     var fallos = 0
     var min=0
@@ -82,7 +82,7 @@ class CalculaMain : AppCompatActivity() {
         }
 
 
-        resultado=generarCuenta(min, max)
+        resultado=crearCuenta(min, max)
 
         ct = object : CountDownTimer(contador * 1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -117,21 +117,20 @@ class CalculaMain : AppCompatActivity() {
             limpiarTodo()
         }
         limpiarUltimo.setOnClickListener{
-            ultimoLimpiado(input)
+            ultimoLimpiado(cadenaTxt)
         }
 
         igual.setOnClickListener{
-            igual(resultado, input.toInt())
-            cuenta_anterior.text=operacion_actual.text.toString() + " = " + input.toInt()
-            resultado=generarCuenta(min, max)
+            igual(resultado, cadenaTxt.toInt())
+            cuenta_anterior.text=operacion_actual.text.toString() + " = " + cadenaTxt.toInt()
             limpiarTodo()
-            resultado=generarCuenta(min, max)
+            resultado=crearCuenta(min, max)
         }
 
         botones_numeros.forEach {
             it.setOnClickListener { b ->
                 concatenar(it.text.toString())
-                respuesta.text=input
+                respuesta.text=cadenaTxt
             }
 
         }
@@ -146,33 +145,6 @@ class CalculaMain : AppCompatActivity() {
     }
 
 
-    fun generarCuenta(min:Int, max:Int): Int {
-
-        var num1 =(min..max).random()
-        var num2 =(min..max).random()
-        var n1=num1
-        var n2=num2
-        var operacion = (1..3).random()
-        var result=0
-
-        if (num2>num1){
-            num1=n2
-            num2=n1
-        }
-
-        if (operacion == 1){
-            operacion_actual.text=num1.toString() + " + "+ num2.toString()
-            result=num1+num2
-        }else if(operacion == 2){
-            operacion_actual.text=num1.toString() + " - "+ num2.toString()
-            result=num1-num2
-        }else{
-            operacion_actual.text=num1.toString() + " * "+ num2.toString()
-            result=num1*num2
-        }
-        return result
-    }
-
     fun igual(user_val:Int, cuenta_solu:Int){
         if (user_val==cuenta_solu){
             aciertos++
@@ -185,20 +157,48 @@ class CalculaMain : AppCompatActivity() {
     }
 
     fun concatenar(valor:String){
-        input+=valor
+        cadenaTxt+=valor
     }
 
     fun limpiarTodo(){
-        input=""
-        respuesta.text=input
+        cadenaTxt=""
+        respuesta.text=cadenaTxt
     }
 
     fun ultimoLimpiado(str:String){
-        var longitud=input.length
+        var longitud=cadenaTxt.length
         if (longitud!=0) {
-            input = str.replace(str.substring(str.length - 1), "")
-            respuesta.text = input
+            cadenaTxt = str.replace(str.substring(str.length - 1), "")
+            respuesta.text = cadenaTxt
         }
+    }
+
+
+    fun crearCuenta(min:Int, max:Int): Int {
+
+        var num1 =(min..max).random()
+        var num2 =(min..max).random()
+        var n1=num1
+        var n2=num2
+        var operacion = (0..2).random()
+        var result=0
+
+        if (num2>num1){
+            num1=n2
+            num2=n1
+        }
+
+        if (operacion ==0){
+            operacion_actual.text=num1.toString() + " + "+ num2.toString()
+            result=num1+num2
+        }else if(operacion == 1){
+            operacion_actual.text=num1.toString() + " - "+ num2.toString()
+            result=num1-num2
+        }else{
+            operacion_actual.text=num1.toString() + " * "+ num2.toString()
+            result=num1*num2
+        }
+        return result
     }
 
 }
