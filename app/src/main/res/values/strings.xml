@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">trones</string>
+
+    <string name="sp_tiempo">tiempo</string>
+    <integer name="tiempoDef">20</integer>
+
+    <string name="sp_minimo">minimo</string>
+    <integer name="numMinimoDef">0</integer>
+
+    <string name="sp_maximo">maximo</string>
+    <integer name="numMaximoDef">10</integer>
+
+    <string name="sp_animacion">maximo</string>
+    <integer name="selectedAnima">0</integer>
+
+    <string name="porcentaje_una_partida"> Porcentaje de aciertos en esta partida: %1$.2f</string>
+    <string name="porcentaje_total">Porcentaje de total de aciertos: %1$.2f </string>
+
+    <integer name="zero">0</integer>
+
+
+    <string-array name="amiaciones">
+        <item>Sin animacion</item>
+        <item>Animacion 1</item>
+        <item>animacion 2</item>
+    </string-array>
+
+    <string-array name="operadores">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+    </string-array>
+
+    <integer-array name="cuentasDef">
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+    </integer-array>
+
 </resources>

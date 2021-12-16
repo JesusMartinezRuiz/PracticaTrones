@@ -14,6 +14,11 @@ lateinit var config:Button
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        val app_id ="com.example.trones"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

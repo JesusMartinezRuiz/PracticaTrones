@@ -245,7 +245,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/tv_timer"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icons8_reloj_80" />
+        app:srcCompat="@drawable/hp" />
 
     <ImageView
         android:id="@+id/iv_cronometro2"
@@ -254,7 +254,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/tv_timer"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icons8_reloj_80" />
+        app:srcCompat="@drawable/hp" />
 
     <TextView
         android:id="@+id/tv_aciertos"
